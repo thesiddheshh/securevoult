@@ -1,0 +1,436 @@
+/* ========================================
+   SECURE VAULT - PROFESSIONAL CYBERSECURITY UI
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Root Variables */
+:root {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #111625;
+    --bg-card: #1a1f35;
+    --accent-blue: #3b82f6;
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --accent-gold: #f59e0b;
+    --accent-purple: #8b5cf6;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border-color: #2d3748;
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-security: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --shadow-lg: 0 10px 40px -10px rgba(0,0,0,0.5);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Main App Background */
+.stApp {
+    background: var(--bg-primary);
+    background-image: 
+        radial-gradient(ellipse at top, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hide Streamlit Branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+[data-testid="stSidebar"] .stMarkdown h2 {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--gradient-3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* Navigation Buttons */
+.stSidebar [data-testid="stRadio"] label {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.stSidebar [data-testid="stRadio"] label:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+.stSidebar [data-testid="stRadio"] input:checked + label {
+    background: var(--gradient-3);
+    border-color: var(--accent-blue);
+    color: white;
+}
+
+/* Main Headers */
+h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 16px;
+    margin: 32px 0 16px 0;
+}
+
+h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+/* Metric Cards */
+div[data-testid="stMetric"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+div[data-testid="stMetric"]:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+div[data-testid="stMetricLabel"] {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+div[data-testid="stMetricValue"] {
+    background: var(--gradient-3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Custom Cards */
+.security-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.security-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.icon-blue { background: rgba(59, 130, 246, 0.2); }
+.icon-green { background: rgba(16, 185, 129, 0.2); }
+.icon-red { background: rgba(239, 68, 68, 0.2); }
+.icon-gold { background: rgba(245, 158, 11, 0.2); }
+.icon-purple { background: rgba(139, 92, 246, 0.2); }
+
+/* Buttons */
+.stButton > button {
+    background: var(--gradient-security);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    width: auto;
+    min-width: 200px;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Input Fields */
+.stTextInput > div > div > input,
+.stPasswordInput > div > div > input {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus,
+.stPasswordInput > div > div > input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+    outline: none;
+}
+
+/* Alerts */
+.stAlert {
+    border-radius: 12px;
+    border: none;
+    padding: 16px 20px;
+    font-weight: 500;
+}
+
+.stAlert[data-testid="stAlertSuccess"] {
+    background: rgba(16, 185, 129, 0.15);
+    border-left: 4px solid var(--accent-green);
+}
+
+.stAlert[data-testid="stAlertError"] {
+    background: rgba(239, 68, 68, 0.15);
+    border-left: 4px solid var(--accent-red);
+}
+
+.stAlert[data-testid="stAlertWarning"] {
+    background: rgba(245, 158, 11, 0.15);
+    border-left: 4px solid var(--accent-gold);
+}
+
+.stAlert[data-testid="stAlertInfo"] {
+    background: rgba(59, 130, 246, 0.15);
+    border-left: 4px solid var(--accent-blue);
+}
+
+/* Progress Bar */
+.stProgress > div > div {
+    background: var(--gradient-3);
+    border-radius: 10px;
+}
+
+.stProgress > div {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    height: 8px;
+}
+
+/* Tables */
+div[data-testid="stDataFrame"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+div[data-testid="stDataFrame"] table {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+}
+
+/* File Uploader */
+.stFileUploader {
+    background: var(--bg-card);
+    border: 2px dashed var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.stFileUploader:hover {
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+/* Checkbox */
+.stCheckbox label {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 18px;
+    transition: all 0.3s ease;
+}
+
+.stCheckbox label:hover {
+    border-color: var(--accent-blue);
+}
+
+.stCheckbox input:checked + label {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--accent-blue);
+}
+
+/* Expander */
+.stExpander {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin: 16px 0;
+}
+
+.stExpander summary {
+    font-weight: 600;
+    padding: 16px;
+}
+
+/* Node Status Cards */
+.node-status {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.node-status:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-green);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+}
+
+.node-status .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    display: inline-block;
+    margin-right: 8px;
+    box-shadow: 0 0 10px var(--accent-green);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Code Blocks */
+.stCode {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* Divider */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 32px 0;
+}
+
+/* Tabs */
+.stTabs [data-testid="stTab"] {
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease;
+}
+
+.stTabs [data-testid="stTabSelected"] {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+/* Custom Badge */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-success { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+.badge-danger { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+.badge-warning { background: rgba(245, 158, 11, 0.2); color: var(--accent-gold); }
+.badge-info { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mermaid Diagram Container */
+.mermaid {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+}
